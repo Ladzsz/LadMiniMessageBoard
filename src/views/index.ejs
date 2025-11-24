@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+<body>
+    <h1>Messages Below</h1>
+
+    <ul>
+        <% messages.forEach(function(item) { %>
+           <strong><%= item.user %></strong>: <%= item.text %> (<%= item.added.toLocaleString() %>)
+        <% }); %>
+    </ul>
+
+    
+
+</body>
+</html>
