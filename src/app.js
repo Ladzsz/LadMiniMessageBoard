@@ -1,7 +1,8 @@
+//defining variables
 const express = require('express');
 const app = express();
 const path = require('path');
-
+const bodyParser = require('body-parser');
 const indexRoutes = require('./routes/indexroutes.js');
 const messageRoutes = require('./routes/messageroutes.js');
 
@@ -16,7 +17,7 @@ app.use(express.json());
 app.use('/', indexRoutes);
 app.use('/messages', messageRoutes);
 
-
+//running server
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });

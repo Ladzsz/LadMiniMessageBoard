@@ -2,24 +2,26 @@
 const express = require('express');
 const router = express.Router();
 
+//define array
+const messages = [];
 
+//get request to render messages
 router.get('/', (req, res) => {
-
-  const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
-  }
-];
 
 res.render("index", { title: "Mini Messageboard", messages: messages })
 
+});
+
+router.post('/new', (req, res) => {
+  //grabbing form fields  
+  const author = req.body.author; 
+  const usermessage = req.body.usermessage;
+  
+  //pushing to messages array
+  messages.push({text: usermessage, user: author, added: new Date()})
+
+  //sending user back too root
+  res.redirect("/")
 });
 
 module.exports = router;
