@@ -12,6 +12,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Middleware for form data
 app.use(express.urlencoded({ extended: true }));
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.use(express.json());
 
 app.use('/', indexRoutes);

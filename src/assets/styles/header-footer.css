@@ -1,0 +1,53 @@
+/* Make header span full width */
+.site-header {
+    width: 100vw; /* full viewport width */
+    background: #4463ff;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* prevent flexbox from shrinking it */
+}
+
+/* Container inside header to center content */
+.site-header .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header title */
+.site-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.site-header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Nav links */
+.site-header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.site-header nav a:hover {
+    color: #cce0ff;
+}
+
+/* Footer styling */
+.site-footer {
+    background: #4463ff;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+    color: #ffffff;
+    font-size: 0.9rem;
+}

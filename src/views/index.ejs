@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/index.css">
     <title>Messages</title>
 </head>
 <body>
-    <h1>Messages Below</h1>
+    
+    <%- include('partials/header') %>
 
-    <ul>
-        <% messages.forEach(function(item, index) { %>
-           <strong><%= item.user %></strong>: <%= item.text %> (<%= item.added.toLocaleString() %>)
-           <a href="/details/<%= index %>">Open</a>
-        <% }); %>
-        
-    </ul>
+    <main class="content">
+        <h1>Messages Below</h1>
+
+        <ul>
+            <% messages.forEach(function(item, index) { %>
+                <li class="message-item">
+                    <span class="user"><strong><%= item.user %></strong></span>
+                    <span class="text"><%= item.text %></span>
+                    <span class="date">(<%= item.added.toLocaleString() %>)</span>
+                    <a class="details-link" href="/details/<%= index %>">Open</a>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
+
+    <%- include('partials/footer') %>
 </body>
 </html>

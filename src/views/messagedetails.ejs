@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/details.css">
     <title>Messages</title>
 </head>
 <body>
-    <h1>Messages details</h1>
 
-    <p><strong>Author:</strong> <%= message.user %></p>
-    <p><strong>Subject:</strong> <%= message.text %></p>
-    <p><strong>Details:</strong> <%= message.details %></p>
-    <p><strong>Added:</strong> <%= message.added.toLocaleString() %></p>
+    <%- include('partials/header') %>
 
-    <a href="/">Back to Home</a>
+    <main class="content">
+        <h1>Messages details</h1>
+
+        <p><strong>Author:</strong> <%= message.user %></p>
+        <p><strong>Subject:</strong> <%= message.text %></p>
+        <p><strong>Details:</strong> <%= message.details %></p>
+        <p><strong>Added:</strong> <%= message.added.toLocaleString() %></p>
+    </main>
+
+    <%- include('partials/footer') %>
 </body>
 </html>

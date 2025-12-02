@@ -1,7 +1,25 @@
-<form action="/new" method="POST">
-    <h2>Message Form</h2>
-    <input type="text" name="author" placeholder="name">
-    <input type="text" name="subject" placeholder="subject">
-    <textarea type="text" name="usermessage" placeholder="enter your message" rows="5" cols="30"></textarea>
-    <button type="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Form</title>
+    <link rel="stylesheet" href="/assets/styles/form.css">
+</head>
+<body>
+
+    <%- include('./header', { title: 'New Message' }) %>
+
+    <main class="content">
+        <form action="/new" method="POST">
+            <h2>Message Form</h2>
+            <input type="text" name="author" placeholder="name">
+            <input type="text" name="subject" placeholder="subject">
+            <textarea name="usermessage" placeholder="enter your message" rows="5" cols="30"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <%- include('./footer') %>
+</body>
+</html>
