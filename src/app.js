@@ -1,10 +1,14 @@
 //defining variables
+const dotenv = require('dotenv');
+dotenv.config();
+const pool = require('./model/pool');
 const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const indexRoutes = require('./routes/indexroutes.js');
 const messageRoutes = require('./routes/messageroutes.js');
+
 
 // EJS setup
 app.set('view engine', 'ejs');

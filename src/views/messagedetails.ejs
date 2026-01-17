@@ -8,15 +8,15 @@
 </head>
 <body>
 
-    <%- include('partials/header') %>
+    <%- include('partials/header', { title: 'Mini Message Board' }) %>
 
     <main class="content">
-        <h1>Messages details</h1>
+        <h1>Message Details</h1>
 
-        <p><strong>Author:</strong> <%= message.user %></p>
-        <p><strong>Subject:</strong> <%= message.text %></p>
-        <p><strong>Details:</strong> <%= message.details %></p>
-        <p><strong>Added:</strong> <%= message.added.toLocaleString() %></p>
+        <p><strong>Author:</strong> <%= message.author %></p>
+        <p><strong>Subject:</strong> <%= message.subject %></p>
+        <p><strong>Details:</strong> <%= message.usermessage %></p>
+        <p><strong>Added:</strong> <%= new Date(message.created_at).toLocaleString() %></p>
     </main>
 
     <%- include('partials/footer') %>

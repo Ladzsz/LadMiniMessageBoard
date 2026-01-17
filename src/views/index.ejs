@@ -8,19 +8,28 @@
 </head>
 <body>
     
-    <%- include('partials/header') %>
+    <%- include('partials/header', { title: 'Mini Message Board' }) %>
 
     <main class="content">
         <h1>Messages Below</h1>
 
         <ul>
-            <% messages.forEach(function(item, index) { %>
-                <li class="message-item">
-                    <span class="user"><strong><%= item.user %></strong></span>
-                    <span class="text"><%= item.text %></span>
-                    <span class="date">(<%= item.added.toLocaleString() %>)</span>
-                    <a class="details-link" href="/details/<%= index %>">Open</a>
-                </li>
+            <% messages.forEach(function(item) { %>
+            <li class="message-item">
+                <span class="user">
+                <strong><%= item.author %></strong>
+                </span>
+
+                <span class="text">
+                <%= item.subject %>
+                </span>
+
+                <span class="date">
+                (<%= new Date(item.created_at).toLocaleString() %>)
+                </span>
+
+                <a class="details-link" href="/details/<%= item.id %>">Open</a>
+            </li>
             <% }); %>
         </ul>
     </main>
